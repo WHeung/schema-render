@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "title": "用户信息",
+  "description": "这是一个用户信息表单",
+  "required": ["name", "email"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 10,
+      "title": "姓名"
+    },
+    "age": {
+      "type": "number",
+      "minimum": 18,
+      "maximum": 60,
+      "title": "年龄"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "邮箱"
+    },
+    "phone": {
+      "type": "string",
+      "pattern": "^(?:\\d{3}-){2}\\d{4}$",
+      "title": "电话"
+    }
+  }
+}
