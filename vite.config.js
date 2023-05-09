@@ -3,12 +3,24 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [reactRefresh()],
-  build: {
-    rollupOptions: {
-      input: 'src/index.tsx'
-    }
-  },
   optimizeDeps: {
-    include: ['antd', 'react', 'react-dom']
+    include: ['antd', 'react', 'react-dom','@ant-design/icons']
+  },
+  server: {
+    open: 'src/demo/index.html',
+    port: '5193'
+  },
+  build: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+      },
+    },
+    rollupOptions: {
+      input: {
+        main: 'src/demo/index.html'
+      },
+      exclude: ['demo/**']
+    }
   },
 })

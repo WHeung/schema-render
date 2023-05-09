@@ -88,7 +88,7 @@ export function SchemaRenderer({ schema }: Props) {
   return (
     <Form>
       <h1>{title}</h1>
-      <p>{schemaConfig.description}</p>
+      <p>{schemaConfig?.description}</p>
 
       {renderFormItems()}
     </Form>
